@@ -493,20 +493,26 @@ if st.session_state.quiz_state == 'selection':
     if st.button("전체 단어 혼합 학습", use_container_width=True):
         start_quiz(all_voca)
         
-    # 버튼을 3열로 예쁘게 배치 (1~30과)
-    cols = st.columns(3)
+    st.write("") # 버튼 사이 간격 살짝 띄우기
+    
     chapters = [
         ("1과", voca_1), ("2과", voca_2), ("3과", voca_3), ("4과", voca_4), ("5과", voca_5),
         ("6과", voca_6), ("7과", voca_7), ("8과", voca_8), ("9과", voca_9), ("10과", voca_10),
         ("11과", voca_11), ("12과", voca_12), ("13과", voca_13), ("14과", voca_14), ("15과", voca_15),
         ("16과", voca_16), ("17과", voca_17), ("18과", voca_18), ("19과", voca_19), ("20과", voca_20),
         ("21과", voca_21), ("22과", voca_22), ("23과", voca_23), ("24과", voca_24), ("25과", voca_25),
-        ("26과", voca_26), ("27과", voca_27), ("28과", voca_28), ("29과", voca_29), ("30과", voca_30)]
+        ("26과", voca_26), ("27과", voca_27), ("28과", voca_28), ("29과", voca_29), ("30과", voca_30)
+    ]
     
-    for i, (chap_name, voca_dict) in enumerate(chapters):
-        with cols[i % 3]:
-            if st.button(chap_name, use_container_width=True):
-                start_quiz(voca_dict)
+    # 3개씩 끊어서 새로운 줄(Row)을 만들어 모바일에서도 순서가 꼬이지 않게 함
+    for i in range(0, len(chapters), 3):
+        cols = st.columns(3)
+        for j in range(3):
+            if i + j < len(chapters):
+                chap_name, voca_dict = chapters[i + j]
+                with cols[j]:
+                    if st.button(chap_name, use_container_width=True):
+                        start_quiz(voca_dict)
 
 # --- [주관식 입력 화면] ---
 elif st.session_state.quiz_state == 'input':
