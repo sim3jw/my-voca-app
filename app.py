@@ -414,7 +414,7 @@ voca_30 = {
 # ... voca_30 까지 추가 ...
 
 # 전체 단어장
-    all_voca = {
+all_voca = {
     **voca_1, **voca_2, **voca_3, **voca_4, **voca_5,
     **voca_6, **voca_7, **voca_8, **voca_9, **voca_10,
     **voca_11, **voca_12, **voca_13, **voca_14, **voca_15,
