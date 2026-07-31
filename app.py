@@ -457,7 +457,6 @@ def submit_answer():
     # 사용자가 입력한 답을 세션에 저장하고 채점 화면으로 넘어감
     st.session_state.user_answer = st.session_state.answer_input
     st.session_state.quiz_state = 'eval'
-    st.session_state.answer_input = "" # 입력창 비우기
 
 def mark_answer(is_correct):
     current_word = st.session_state.word_list[st.session_state.current_index]
