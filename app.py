@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import random
 import pandas as pd
 
@@ -6,7 +7,7 @@ import pandas as pd
 st.set_page_config(page_title="나만의 단어장", layout="centered")
 
 # ==========================================
-# 1. 단어 데이터 (기존 1~30과 데이터를 여기에 붙여넣으세요)
+# 1. 기본 단어 데이터 (1과 ~ 30과)
 # ==========================================
 voca_1 = {
     "detour": "우회하다", "pull over": "길가에 대다", "meander": "구불구불하다", "careen": "위태롭게 달리다",
@@ -411,22 +412,146 @@ voca_30 = {
     "harmless": "무해한", "harmonization": "조화", "purify": "정화하다", "wastewater": "폐수",
     "uniqueness": "독특성"
 }
-# ... voca_30 까지 추가 ...
 
-# 전체 단어장
-all_voca = {
+# ==========================================
+# 2. 상급 단어 데이터 (상급 1과 ~ 상급 8과)
+# ==========================================
+adv_voca_1 = {
+    "ascertain": "확인하다", "deviate": "벗어나다, 빗나가다", "elapse": "경과하다",
+    "alternate": "대신의, 교대의, 교대하다", "alter": "바꾸다", "awkward": "어색한",
+    "inept": "솜씨 없는", "behind the wheel": "운전하여", "sober": "술 취하지 않은, 엄숙한",
+    "drive under the influence": "술 취한 채 운전하다", "break down": "고장나다, 분해하다",
+    "dent": "움푹 들어가게 하다, 움푹 들어간 곳", "detach": "분리시키다", "pick up the tab": "돈을 지불하다",
+    "impassable": "지나갈 수 없는", "intact": "멀쩡한", "pass through": "~를 통과하다",
+    "pedestrian": "보행자", "yield": "양보하다, 이익을 내다", "milestone": "중요한 사건",
+    "shortcut": "지름길", "steer": "조종하다", "toll": "통행료, 사상자 수",
+    "take a toll": "피해를 입다", "tow": "견인하다", "wear down": "마모되다",
+    "attrition": "마찰", "callous": "냉담한", "hamper": "방해하다",
+    "thwart": "좌절시키다", "wobble": "흔들흔들하다", "enumerate": "열거하다"
+}
+
+adv_voca_2 = {
+    "amass": "축적하다", "score a goal": "득점하다", "deduct": "감하다", "dispense": "나눠주다",
+    "allocate": "할당하다", "beneficiary": "수혜자", "premium": "보험료",
+    "booming": "급속히 발전하는", "sluggish": "부진한", "consolidate": "통합하다",
+    "mogul": "거물", "tycoon": "거물", "downturn": "침체", "fall short of expectation": "기대에 미치지 못하다",
+    "impoverished": "빈곤에 처한", "incur": "초래하다", "make ends meet": "손익분기점을 맞추다",
+    "moonlight": "부업하다", "rosy": "낙관적인", "optimistic": "낙관적인",
+    "self-sufficiency": "자급 자족", "stagnation": "침체", "surplus": "흑자",
+    "shortfall": "감소", "tactics": "책략", "gimmick": "책략", "withdrawal": "인출, 철수",
+    "up to": "~까지", "affluent": "풍부한", "bolster": "지지하다, 강화하다", "curtail": "줄이다",
+    "insolvent": "파산한", "default": "채무 불이행", "reckless": "무분별한", "prodigal": "낭비하는",
+    "pension": "연금", "scrimp": "절약하다", "sumptuous": "낭비하는", "squander": "흥청망청 쓰다"
+}
+
+adv_voca_3 = {
+    "brew": "(차를) 끓이다", "complement": "보충하다", "detract": "(질을) 떨어뜨리다", "detractor": "가치를 폄하하는 사람",
+    "craving": "갈망", "condemn": "비난하다", "decay": "부패하다, 부패", "enrich": "풍부하게 하다",
+    "dissuade": "만류하다", "fast": "단식하다, 단식", "famine": "기근", "intake": "섭취",
+    "mince": "잘게 다지다", "mouth-watering": "군침이 도는", "run-of-the-mill": "너무 평범한", "spine-tingling": "등골이 오싹한",
+    "ripe": "(과일이) 익은", "sip": "한 모금 마시다, 한 모금", "swallow": "삼키다, 억누르다", "inhale": "숨을 들이마시다",
+    "corpulent": "비만의", "plump": "통통한", "fermentation": "발효", "grab a bite": "간단히 먹다",
+    "pasteurize": "저온 살균하다", "split the bill": "더치페이하다", "hit the hay": "잠자리에 들다", "abstemious": "자제하는",
+    "supple": "유연한", "repugnant": "비위 상하는", "poultry": "가금류", "thaw": "해동시키다", "stale": "상한, 진부한"
+}
+
+adv_voca_4 = {
+    "anonymous": "익명의", "unanimous": "만장일치의", "ambiguous": "애매한", "chronicle": "시간순으로 기록하다",
+    "cohesive": "응집력 있는", "copious": "풍부한", "cut to the chase": "본론으로 들어가다", "Don’t beat around the bush.": "둘러 얘기하지 마.",
+    "get away with it": "교묘하게 모면하다", "run up a bill": "청구서가 쌓이다", "lay down the law": "강압적으로 말하다", "eloquent": "말 잘하는",
+    "loquacious": "말 많은", "orator": "웅변가", "encompass": "포함하다", "encyclopedia": "백과사전",
+    "gist": "요점", "guts": "요점", "ironic": "아이러니한", "satirical": "풍자적인",
+    "satire": "풍자", "naive": "순진한", "novice": "초보", "nonverbal": "비언어적인",
+    "unsurpass": "능가하다", "protagonist": "주인공", "antagonist": "적수", "readership": "독자",
+    "ridership": "승객", "synonymous": "동의어의", "vague": "애매한", "jovial": "쾌활한",
+    "allude": "암시하다", "decipher": "해독하다", "encrypt": "암호화하다", "make out": "알아듣다",
+    "succinct": "간결한", "lucid": "명료한", "verbose": "말이 많은", "confound": "당황한",
+    "simultaneous": "동시의", "denote": "나타내다", "mordant": "신랄한"
+}
+
+adv_voca_5 = {
+    "condensed": "응축된", "drained": "지친", "adverse effect": "부정적인 영향", "averse": "싫어하는",
+    "aversion": "혐오", "quench": "적시다, 갈증을 해소하다", "gauge": "측정하다, 평가하다", "be accustomed to": "~에 익숙하다",
+    "optimal": "최적의", "immense": "엄청난", "downpour": "폭우", "likelihood": "가능성",
+    "be likely to": "~할 것 같다", "precipitation": "강수량", "meteorologist": "기상학자", "meteor": "유성",
+    "prolong": "연장하다", "dry spell": "건기", "shimmer": "반짝이다", "shiver": "떨다",
+    "dispel": "없애버리다", "expel": "쫓아내다", "fringe": "주변", "fringe benefit": "부가 혜택",
+    "cold front": "한랭 전선", "gust": "돌풍", "ignite": "불을 붙이다", "in favor of": "~에 찬성하여",
+    "fall out of favor": "인기가 떨어지다", "poll": "여론조사", "inclement": "날씨가 나쁜", "fortuitous": "행운의",
+    "static": "정적인", "erratic": "불규칙한", "under the weather": "몸이 안좋은", "on the ball": "유능한",
+    "ample": "충분한", "innumerable": "셀 수 없는", "residual": "남은", "ensue": "계속되다",
+    "abruptly": "갑자기", "drastic": "급격한", "phenomenal": "경이로운", "variable": "변하기 쉬운, 변수",
+    "in terms of": "~에 있어서, ~에 관하여"
+}
+
+adv_voca_6 = {
+    "accord": "동의", "in accordance with": "~에 부합하여", "alliance": "동맹", "ally": "동맹국",
+    "allies": "연합국", "assassinate": "암살하다", "conspiracy": "음모", "overthrow": "전복시키다",
+    "exile": "추방, 추방하다", "hegemony": "힘", "incite": "자극하다", "verdict": "판결",
+    "riot": "폭동", "intervention": "간섭, 중재", "mediate": "중재하다", "menace": "위협",
+    "nominate": "지명하다", "pacify": "진정시키다", "preliminary": "예비의", "revoke": "폐지하다",
+    "minor": "미성년자", "run for": "입후보하다", "sovereignty": "자치권", "supremacy": "힘",
+    "abdicate": "퇴임하다", "throne": "왕좌", "collusion": "공모", "manipulate": "조작하다",
+    "evasive": "회피적인", "bring into": "소환하다", "impeach": "탄핵하다", "acquit": "무죄를 입증하다",
+    "inception": "시작", "ostensible": "표면적인", "precursor": "전조, 선구자", "serve as": "~의 역할을 하다",
+    "predecessor": "전임자", "subvert": "전복시키다", "faction": "당파", "manifest": "나타나다",
+    "proponent": "지지자", "allegedly": "전해진 바에 의하면", "mollify": "진정시키다"
+}
+
+adv_voca_7 = {
+    "by no means": "결코 ~이 아니다", "by all means": "물론", "embark": "탑승하다, 승선하다",
+    "disembark": "내리다", "dread": "두려워하다", "eminent": "저명한", "prominent": "유명한",
+    "in the nick of time": "때맞춰", "on the up and up": "승승장구 하는", "at the drop of a hat": "주저하지 않고",
+    "make amends": "보상하다", "nausea": "구역질", "vomit": "토하다", "throw up": "토하다",
+    "handheld": "휴대용", "no strings attached": "무조건의", "indefinitely": "무기한으로",
+    "once and for all": "최종적으로", "one of a kind": "독특한 것", "retrieve": "되찾다",
+    "sneaky": "몰래 하는, 비열한", "straightforward": "간단한, 솔직한", "weary": "지치게 하다, 지친",
+    "ambience": "분위기", "concierge": "안내 직원", "confiscate": "압수하다", "raid": "급습",
+    "on the premises": "부지 내", "confide": "신뢰하다", "disparage": "비하하다", "interrogate": "심문하다",
+    "defer": "연기하다", "deter": "방해하다", "fastidious": "까다로운, 꼼꼼한", "impede": "방해하다",
+    "linger": "꾸물거리다", "queasy": "구역질 나는", "bent over at the waist": "허리를 구부리다",
+    "vociferous": "큰 소리로 외치는", "tempting": "솔깃한", "assail": "공격하다", "quarantine": "격리하다",
+    "unobtrusively": "지나치지 않게"
+}
+
+adv_voca_8 = {
+    "abate": "약해지다", "wane": "약해지다", "lessen": "줄이다", "abortion": "낙태, 유산",
+    "ailment": "병", "arthritis": "관절염", "anorexia": "거식증", "asthma": "천식",
+    "contagious": "전염성의", "cardiovascular disease": "심혈관 질환", "epidemic": "전염병, 유행성의",
+    "fetus": "태아", "expectant mother": "산모", "fracture": "골절, 골절되다", "cast": "깁스",
+    "inhale": "숨을 들어마시다", "exhale": "숨을 들이내쉬다", "insomnia": "불면증", "numb": "마비된, 마비시키다",
+    "over-the-counter": "처방전 없이 살 수 있는", "perspiration": "땀", "sanitation": "위생",
+    "germ": "세균", "vaccinate": "예방 접종을 하다", "abrasion": "찰과상", "acupuncture": "침술",
+    "anesthetic": "마취제", "administer": "투여하다, 경영하다", "euthanasia": "안락사",
+    "exacerbate": "악화시키다", "inflammation": "염증", "recuperate": "회복하다",
+    "exhaustive": "철저한, 소모적인", "diarrhea": "설사", "respiratory": "호흡기의",
+    "autopsy": "검시", "malady": "병", "virulent": "악성의"
+}
+
+# ==========================================
+# 3. 전체 단어 사전 연동 (기본 단어 + 상급 단어 모두 통합)
+# ==========================================
+all_basic_voca = {
     **voca_1, **voca_2, **voca_3, **voca_4, **voca_5,
     **voca_6, **voca_7, **voca_8, **voca_9, **voca_10,
     **voca_11, **voca_12, **voca_13, **voca_14, **voca_15,
     **voca_16, **voca_17, **voca_18, **voca_19, **voca_20,
     **voca_21, **voca_22, **voca_23, **voca_24, **voca_25,
-    **voca_26, **voca_27, **voca_28, **voca_29, **voca_30}
+    **voca_26, **voca_27, **voca_28, **voca_29, **voca_30
+}
+
+all_adv_voca = {
+    **adv_voca_1, **adv_voca_2, **adv_voca_3, **adv_voca_4,
+    **adv_voca_5, **adv_voca_6, **adv_voca_7, **adv_voca_8
+}
+
+all_voca = {**all_basic_voca, **all_adv_voca}
 
 # ==========================================
-# 2. 상태(세션) 관리 (새로고침 되어도 데이터 유지)
+# 4. 상태(세션) 관리
 # ==========================================
 if 'quiz_state' not in st.session_state:
-    st.session_state.quiz_state = 'selection' # selection, input, eval, result
+    st.session_state.quiz_state = 'selection' 
     st.session_state.word_list = []
     st.session_state.current_index = 0
     st.session_state.score = 0
@@ -434,7 +559,7 @@ if 'quiz_state' not in st.session_state:
     st.session_state.current_voca_dict = {}
 
 # ==========================================
-# 3. 핵심 함수 (로직)
+# 5. 핵심 함수 (로직)
 # ==========================================
 def start_quiz(choice_dict):
     st.session_state.current_voca_dict = choice_dict
@@ -454,7 +579,6 @@ def start_retake():
     st.session_state.quiz_state = 'input'
 
 def submit_answer():
-    # 사용자가 입력한 답을 세션에 저장하고 채점 화면으로 넘어감
     st.session_state.user_answer = st.session_state.answer_input
     st.session_state.quiz_state = 'eval'
 
@@ -478,24 +602,49 @@ def mark_answer(is_correct):
     else:
         st.session_state.quiz_state = 'input'
 
+def mark_incorrect():
+    mark_answer(False)
+    
+def mark_correct():
+    mark_answer(True)
+
 def go_home():
     st.session_state.quiz_state = 'selection'
 
 # ==========================================
-# 4. 화면(UI) 그리기
+# 6. 화면(UI) 그리기
 # ==========================================
 st.title("📖 나만의 영단어 암기장")
 
 # --- [단원 선택 화면] ---
 if st.session_state.quiz_state == 'selection':
-    st.subheader("학습할 단원을 선택하세요")
+    st.subheader("모든 단어 통합 학습")
     
-    if st.button("전체 단어 혼합 학습", use_container_width=True):
+    if st.button("🌟 전체 단어 통합 학습 (기본 + 상급)", type="primary", use_container_width=True):
         start_quiz(all_voca)
         
-    st.write("") # 버튼 사이 간격 살짝 띄우기
+    st.write("---")
     
-    chapters = [
+    st.subheader("🔥 상급 단어 (1~8과)")
+    adv_chapters = [
+        ("상급 1과", adv_voca_1), ("상급 2과", adv_voca_2), ("상급 3과", adv_voca_3),
+        ("상급 4과", adv_voca_4), ("상급 5과", adv_voca_5), ("상급 6과", adv_voca_6),
+        ("상급 7과", adv_voca_7), ("상급 8과", adv_voca_8)
+    ]
+    
+    for i in range(0, len(adv_chapters), 3):
+        cols = st.columns(3)
+        for j in range(3):
+            if i + j < len(adv_chapters):
+                chap_name, voca_dict = adv_chapters[i + j]
+                with cols[j]:
+                    if st.button(chap_name, use_container_width=True):
+                        start_quiz(voca_dict)
+                        
+    st.write("---")
+    
+    st.subheader("📚 기본 단어 (1~30과)")
+    basic_chapters = [
         ("1과", voca_1), ("2과", voca_2), ("3과", voca_3), ("4과", voca_4), ("5과", voca_5),
         ("6과", voca_6), ("7과", voca_7), ("8과", voca_8), ("9과", voca_9), ("10과", voca_10),
         ("11과", voca_11), ("12과", voca_12), ("13과", voca_13), ("14과", voca_14), ("15과", voca_15),
@@ -504,12 +653,11 @@ if st.session_state.quiz_state == 'selection':
         ("26과", voca_26), ("27과", voca_27), ("28과", voca_28), ("29과", voca_29), ("30과", voca_30)
     ]
     
-    # 3개씩 끊어서 새로운 줄(Row)을 만들어 모바일에서도 순서가 꼬이지 않게 함
-    for i in range(0, len(chapters), 3):
+    for i in range(0, len(basic_chapters), 3):
         cols = st.columns(3)
         for j in range(3):
-            if i + j < len(chapters):
-                chap_name, voca_dict = chapters[i + j]
+            if i + j < len(basic_chapters):
+                chap_name, voca_dict = basic_chapters[i + j]
                 with cols[j]:
                     if st.button(chap_name, use_container_width=True):
                         start_quiz(voca_dict)
@@ -524,7 +672,6 @@ elif st.session_state.quiz_state == 'input':
     current_word = st.session_state.word_list[current]
     st.markdown(f"<h1 style='text-align: center; font-size: 50px;'>{current_word}</h1>", unsafe_allow_html=True)
     
-    # 폼(form)을 사용하면 모바일 키보드에서 '완료(Enter)'를 눌렀을 때 바로 제출됩니다.
     with st.form(key='answer_form', clear_on_submit=True):
         st.text_input("한글 뜻을 입력하세요", key="answer_input")
         submit_btn = st.form_submit_button("확인 (Enter)")
@@ -533,6 +680,19 @@ elif st.session_state.quiz_state == 'input':
             st.rerun()
 
     st.button("메인 메뉴로", on_click=go_home)
+
+    # 자동 포커싱을 위한 자바스크립트 주입
+    components.html(
+        """
+        <script>
+        const inputs = window.parent.document.querySelectorAll('input[type="text"]');
+        if (inputs.length > 0) {
+            inputs[0].focus();
+        }
+        </script>
+        """,
+        height=0
+    )
 
 # --- [채점 화면] ---
 elif st.session_state.quiz_state == 'eval':
@@ -545,13 +705,40 @@ elif st.session_state.quiz_state == 'eval':
     st.success(f"**정답: {correct_meaning}**")
     
     st.write("---")
-    st.write("채점해주세요 👇")
+    st.write("채점해주세요 👇 (PC: 키보드 '0' 또는 '1'로 바로 채점)")
     
     col1, col2 = st.columns(2)
     with col1:
-        st.button("❌ 오답 처리", use_container_width=True, on_click=mark_answer, args=(False,))
+        st.button("❌ 오답 처리", use_container_width=True, on_click=mark_incorrect)
     with col2:
-        st.button("⭕ 정답 처리", use_container_width=True, on_click=mark_answer, args=(True,))
+        st.button("⭕ 정답 처리", use_container_width=True, on_click=mark_correct)
+
+    # 단축키(0, 1) 적용을 위한 자바스크립트 주입
+    components.html(
+        """
+        <script>
+        const doc = window.parent.document;
+        
+        // 중복 실행을 막기 위해 이전 리스너 제거
+        if (doc.quizKeyListener) {
+            doc.removeEventListener('keydown', doc.quizKeyListener);
+        }
+        
+        doc.quizKeyListener = function(e) {
+            if (e.key === '0') {
+                const btns = doc.querySelectorAll('button');
+                btns.forEach(b => { if (b.innerText.includes('오답 처리')) b.click(); });
+            } else if (e.key === '1') {
+                const btns = doc.querySelectorAll('button');
+                btns.forEach(b => { if (b.innerText.includes('정답 처리')) b.click(); });
+            }
+        };
+        
+        doc.addEventListener('keydown', doc.quizKeyListener);
+        </script>
+        """,
+        height=0
+    )
 
 # --- [최종 결과 표 화면] ---
 elif st.session_state.quiz_state == 'result':
@@ -559,13 +746,11 @@ elif st.session_state.quiz_state == 'result':
     total = len(st.session_state.word_list)
     st.header(f"학습 완료! (점수: {st.session_state.score} / {total})")
     
-    # 결과를 표(DataFrame)로 변환
     df = pd.DataFrame(st.session_state.results)
     df.columns = ["단어", "내가 쓴 답", "정답", "정답여부"]
     
-    # 오답인 항목만 색칠하는 함수
     def color_wrong(val):
-        color = '#ffebee' if not val else 'white' # 오답은 연한 빨간색(회색 대신 모바일에서 가시성 좋음)
+        color = '#ffebee' if not val else 'white'
         return f'background-color: {color}'
     
     styled_df = df.style.map(color_wrong, subset=['정답여부'])
