@@ -528,6 +528,32 @@ adv_voca_8 = {
     "autopsy": "검시", "malady": "병", "virulent": "악성의"
 }
 
+adv_voca_9 = {
+    "be adept at": "능숙하다", "blunder": "큰 실수", "call off": "취소하다", "revoke": "취소하다",
+    "certify": "증명하다", "commend": "칭찬하다", "command": "명령하다", "decent": "괜찮은, 예의 바른",
+    "dismal": "참담한", "entail": "수반하다", "morale": "사기 (근로 의욕)", "lay off": "해고하다",
+    "mull over": "심사숙고하다", "come across": "우연히 만나다", "draw on": "~에 의지하다", "predecessor": "전임자",
+    "outlook": "견해", "put up with": "참다", "whining": "불평", "reinforce": "강화하다",
+    "shorthanded": "일손이 모자라는", "adulation": "아부", "flatter": "아첨하다", "tranquility": "평온",
+    "convene": "소집하다", "converge": "모이다", "respective": "각각의", "exalt": "칭찬하다, 승진시키다",
+    "pertinent": "적절한", "renounce": "포기하다", "savvy": "박식한, 알다", "biased": "편향된",
+    "sedentary": "좌식의", "seasoned": "노련한", "screwup": "실수", "diligence": "근면",
+    "runaround": "핑계, 회피", "turnover": "매출액, 이직률", "divisive": "논쟁을 일으키는", "subsume": "포함하다"
+}
+
+adv_voca_10 = {
+    "adversity": "역경", "adverse": "부정적인", "refugee": "난민", "flee": "도망치다",
+    "beseech": "간청하다", "solicit": "간청하다", "blaze": "화재", "put out": "불을 끄다",
+    "casualty": "사상자", "extinguish": "불을 끄다", "fall through": "완료되지 못하다", "come over": "들르다",
+    "fire drill": "화재 대피 훈련", "jeopardize": "위험에 빠뜨리다", "mortal": "죽음의", "immortal": "불멸의",
+    "indestructible": "파괴되지 않는", "nuisance": "골칫거리", "ominous": "불길한", "auspicious": "길조의",
+    "peril": "위험", "imperil": "위험에 빠뜨리다", "setback": "좌절, 방해", "ceasefire": "휴전",
+    "shabby": "초라한", "starvation": "기근", "wreck": "난파, 난파시키다", "afflict": "(심신을) 괴롭히다",
+    "heed": "주의하다", "inadvertently": "의도치 않게", "mishap": "사고", "predicament": "곤경",
+    "reminiscence": "추억", "strand": "고립시키다", "reckless": "부주의한", "ravage": "파괴",
+    "haphazard": "무계획의", "sporadic": "산발적인", "salvage": "지키다"
+}
+
 # ==========================================
 # 3. 전체 단어 사전 연동 (기본 단어 + 상급 단어 모두 통합)
 # ==========================================
@@ -542,7 +568,8 @@ all_basic_voca = {
 
 all_adv_voca = {
     **adv_voca_1, **adv_voca_2, **adv_voca_3, **adv_voca_4,
-    **adv_voca_5, **adv_voca_6, **adv_voca_7, **adv_voca_8
+    **adv_voca_5, **adv_voca_6, **adv_voca_7, **adv_voca_8,
+    **adv_voca_9, **adv_voca_10
 }
 
 all_voca = {**all_basic_voca, **all_adv_voca}
@@ -625,11 +652,12 @@ if st.session_state.quiz_state == 'selection':
         
     st.write("---")
     
-    st.subheader("🔥 상급 단어 (1~8과)")
-    adv_chapters = [
+    st.subheader("🔥 상급 단어")
+adv_chapters = [
         ("상급 1과", adv_voca_1), ("상급 2과", adv_voca_2), ("상급 3과", adv_voca_3),
         ("상급 4과", adv_voca_4), ("상급 5과", adv_voca_5), ("상급 6과", adv_voca_6),
-        ("상급 7과", adv_voca_7), ("상급 8과", adv_voca_8)
+        ("상급 7과", adv_voca_7), ("상급 8과", adv_voca_8), ("상급 9과", adv_voca_9),
+        ("상급 10과", adv_voca_10)
     ]
     
     for i in range(0, len(adv_chapters), 3):
@@ -643,7 +671,7 @@ if st.session_state.quiz_state == 'selection':
                         
     st.write("---")
     
-    st.subheader("📚 기본 단어 (1~30과)")
+    st.subheader("📚 기본 단어")
     basic_chapters = [
         ("1과", voca_1), ("2과", voca_2), ("3과", voca_3), ("4과", voca_4), ("5과", voca_5),
         ("6과", voca_6), ("7과", voca_7), ("8과", voca_8), ("9과", voca_9), ("10과", voca_10),
