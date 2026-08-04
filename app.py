@@ -653,7 +653,7 @@ if st.session_state.quiz_state == 'selection':
     st.write("---")
     
     st.subheader("🔥 상급 단어")
-adv_chapters = [
+    adv_chapters = [
         ("상급 1과", adv_voca_1), ("상급 2과", adv_voca_2), ("상급 3과", adv_voca_3),
         ("상급 4과", adv_voca_4), ("상급 5과", adv_voca_5), ("상급 6과", adv_voca_6),
         ("상급 7과", adv_voca_7), ("상급 8과", adv_voca_8), ("상급 9과", adv_voca_9),
