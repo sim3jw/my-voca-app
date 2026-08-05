@@ -554,6 +554,34 @@ adv_voca_10 = {
     "haphazard": "무계획의", "sporadic": "산발적인", "salvage": "지키다"
 }
 
+adv_voca_11 = {
+    "belated": "늦은", "catch up": "이야기하다, 따라잡다", "cherish": "간직하다", "cherished": "소중한",
+    "despise": "경멸하다", "loathe": "싫어하다", "detest": "싫어하다", "single out": "지목하다",
+    "down-to-earth": "현실적인", "flashy": "화려한", "easygoing": "느긋한", "laid-back": "느긋한",
+    "feast": "축제", "radiant": "빛나는", "subdue": "진압하다", "give the cold shoulder": "냉대하다",
+    "gracious": "상냥한", "matchmaking": "결혼 중매", "mock": "조롱하다, 가짜의", "obey": "순종하다",
+    "obedient": "순종하는", "out of the blue": "갑자기", "reconcile": "화해시키다", "turn down": "거절하다, 소리를 줄이다",
+    "antagonistic": "적대적인", "benevolent": "자비로운", "gregarious": "사교적인", "meddle": "간섭하다",
+    "interfere": "간섭하다", "put-down": "헐뜯기", "humiliating": "굴욕적인", "rapport": "친목 관계",
+    "amiable": "상냥한", "perfunctory": "내키지 않는", "forthright": "솔직한", "bump into": "우연히 만나다, 부딪히다",
+    "confide": "신뢰하다, 털어놓다", "outreach": "봉사 활동", "shun": "피하다", "throw a fit": "화를 내다",
+    "reciprocate": "답례하다", "taciturn": "과묵한"
+}
+
+adv_voca_12 = {
+    "amass": "축적하다", "reserves": "보유량", "antecedent": "앞서는", "anthropology": "인류학",
+    "aristocracy": "귀족", "nobel": "귀족의", "banish": "추방하다", "criminal": "범죄자",
+    "beset": "포위하다", "brandish": "휘두르다", "butcher": "도살하다", "derive": "끌어내다, 유래하다",
+    "dethrone": "퇴위시키다", "enthrone": "왕좌에 앉히다", "elevate": "올리다", "enlist": "입대하다",
+    "forerunner": "선구자, 전조", "hierarchy": "계급제", "lineage": "혈통", "milestone": "이정표, 획기적인 사건",
+    "onset": "시작", "seize": "붙잡다, 빼앗다", "authority": "당국", "accede": "(지위에) 오르다, 동의하다",
+    "flout": "어기다", "culminate": "절정에 이르다, ~로 끝나다", "demise": "종말, 사망", "encroach": "침입하다",
+    "sovereignty": "주권", "espouse": "옹호하다", "spouse": "배우자", "expunge": "지우다",
+    "hoard": "저장, 저장하다", "liquidate": "없애다", "confiscated": "몰수하다", "succumb": "압도당하다",
+    "despotic": "독재적인", "plunder": "약탈하다", "brutality": "잔혹 행위", "dictatorship": "독재 정권",
+    "infamous": "악명 높은", "reap": "수확하다", "riot": "폭동을 일으키다", "exhume": "발굴하다"
+}
+
 # ==========================================
 # 3. 전체 단어 사전 연동 (기본 단어 + 상급 단어 모두 통합)
 # ==========================================
@@ -569,7 +597,7 @@ all_basic_voca = {
 all_adv_voca = {
     **adv_voca_1, **adv_voca_2, **adv_voca_3, **adv_voca_4,
     **adv_voca_5, **adv_voca_6, **adv_voca_7, **adv_voca_8,
-    **adv_voca_9, **adv_voca_10
+    **adv_voca_9, **adv_voca_10, **adv_voca_11, **adv_voca_12
 }
 
 all_voca = {**all_basic_voca, **all_adv_voca}
@@ -657,7 +685,7 @@ if st.session_state.quiz_state == 'selection':
         ("상급 1과", adv_voca_1), ("상급 2과", adv_voca_2), ("상급 3과", adv_voca_3),
         ("상급 4과", adv_voca_4), ("상급 5과", adv_voca_5), ("상급 6과", adv_voca_6),
         ("상급 7과", adv_voca_7), ("상급 8과", adv_voca_8), ("상급 9과", adv_voca_9),
-        ("상급 10과", adv_voca_10)
+        ("상급 10과", adv_voca_10), ("상급 11과", adv_voca_11), ("상급 12과", adv_voca_12)
     ]
     
     for i in range(0, len(adv_chapters), 3):
