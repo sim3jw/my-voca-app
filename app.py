@@ -582,6 +582,37 @@ adv_voca_12 = {
     "infamous": "악명 높은", "reap": "수확하다", "riot": "폭동을 일으키다", "exhume": "발굴하다"
 }
 
+adv_voca_13 = {
+    "assorted": "다양한", "an assortment of": "여러가지의", "boycott": "불매 운동, 거부하다", "apparel": "옷",
+    "choosy": "까다로운", "coax": "구슬리다", "compact": "작은", "compact build": "작은 체구",
+    "dock": "부두", "don": "(옷을) 입다", "rainy day": "힘든 시간", "extravagant": "사치스러운, 지나친",
+    "extravagance": "사치", "fabulous": "멋진", "warranty": "보증", "garment": "옷",
+    "giveaway": "사은품", "merchant": "상인", "merchandise": "상품", "outrageous": "(가격이) 터무니없는",
+    "rage": "분노", "outrage": "분노", "pricey": "값비싼", "vendor": "상인",
+    "exposition": "박람회", "disgruntled": "불만을 품은, 시무룩한", "exorbitant": "(가격이) 터무니없는", "gullible": "잘 속는",
+    "credulous": "잘 속는", "haggle": "값을 흥정하다", "be infatuated": "매료되다", "keep abreast of": "최신 정보를 얻다",
+    "be content with": "만족하다", "sparingly": "절약하여", "splurge": "낭비하다", "squander": "낭비하다",
+    "sumptuous": "낭비하는", "innocuous": "무해한", "preposterous": "터무니없는", "in bulk": "대량으로",
+    "invoice": "송장", "gratuitous": "무료의", "pamper": "만족시키다", "wheedle": "구슬리다"
+}
+
+adv_voca_14 = {
+    "implore": "탄원하다", "indict": "기소하다", "contrite": "뉘우치는", "reversal": "번복",
+    "heinous": "흉악한", "abduct": "유괴하다", "arson": "방화", "assault": "폭행",
+    "attest": "입증하다", "defendant": "피고", "the accused": "피고", "audacity": "뻔뻔함",
+    "audacious": "뻔뻔한", "let go": "해고하다", "condemn": "비난하다, 유죄를 선고하다", "detain": "감금하다",
+    "incarcerate": "감금하다", "discrepancy": "모순", "vast": "큰", "disguise": "위장하다, 위장",
+    "fugitive": "도망자", "get away with": "벌을 교묘히 모면하다", "imperative": "필수적인, 의무 사항", "interrogation": "심문",
+    "divulge": "누설하다", "lenient": "관대한", "litigation": "소송", "lawsuit": "소송",
+    "mediate": "중재하다", "meditate": "명상하다", "outlaw": "금지하다", "plaintiff": "원고",
+    "side": "편들다", "prosecute": "기소하다", "persecute": "박해하다", "scam": "사기",
+    "testify": "증언하다", "abscond": "도주하다", "amnesty": "사면", "annul": "취소하다",
+    "culprit": "범죄자, 원인", "defraud": "속이다", "embezzle": "횡령하다", "obstruct": "방해하다",
+    "felony": "중죄", "amend": "개정하다", "swindle": "속이다", "vindicate": "무죄를 입증하다",
+    "absolve": "용서하다", "come clean": "실토하다", "summon": "소환하다", "verdict": "평결",
+    "on the loose": "탈주 중인", "restitution": "배상", "rancorous": "원한에 얽힌"
+}
+
 # ==========================================
 # 3. 전체 단어 사전 연동 (기본 단어 + 상급 단어 모두 통합)
 # ==========================================
@@ -597,7 +628,8 @@ all_basic_voca = {
 all_adv_voca = {
     **adv_voca_1, **adv_voca_2, **adv_voca_3, **adv_voca_4,
     **adv_voca_5, **adv_voca_6, **adv_voca_7, **adv_voca_8,
-    **adv_voca_9, **adv_voca_10, **adv_voca_11, **adv_voca_12
+    **adv_voca_9, **adv_voca_10, **adv_voca_11, **adv_voca_12,
+    **adv_voca_13, **adv_voca_14
 }
 
 all_voca = {**all_basic_voca, **all_adv_voca}
@@ -685,7 +717,8 @@ if st.session_state.quiz_state == 'selection':
         ("상급 1과", adv_voca_1), ("상급 2과", adv_voca_2), ("상급 3과", adv_voca_3),
         ("상급 4과", adv_voca_4), ("상급 5과", adv_voca_5), ("상급 6과", adv_voca_6),
         ("상급 7과", adv_voca_7), ("상급 8과", adv_voca_8), ("상급 9과", adv_voca_9),
-        ("상급 10과", adv_voca_10), ("상급 11과", adv_voca_11), ("상급 12과", adv_voca_12)
+        ("상급 10과", adv_voca_10), ("상급 11과", adv_voca_11), ("상급 12과", adv_voca_12),
+        ("상급 13과", adv_voca_13), ("상급 14과", adv_voca_14)
     ]
     
     for i in range(0, len(adv_chapters), 3):
