@@ -645,6 +645,22 @@ adv_voca_16 = {
     "transcend": "초월하다", "vacuous": "멍청한, 공허한"
 }
 
+chap_4 = {
+    "mount": "늘다", "severity": "엄격함", "minor offense": "경범죄", "petty theft": "좀도둑질",
+    "inmate": "수감자", "glowing": "극찬하는", "appease": "달래다", "evenhanded": "공정한",
+    "proximity": "인접", "adhesive": "접착제", "backlash": "반발", "executive": "중역",
+    "mutation": "변이", "gauge": "판단하다", "secrete": "분비하다", "pancreatic": "췌장의",
+    "nerve": "신경", "dub": "부르다", "adequately": "충분히", "pancreas": "췌장",
+    "normalize": "정상화되다", "recede": "완화되다", "on one’s behalf": "~을 위해", "leprosy": "나병",
+    "contagious": "전염성의", "lung": "폐", "communicable": "전염성의", "respiratory tract": "기도",
+    "grip": "지배력", "regime": "체제", "indoctrination": "주입", "submit": "복종하다",
+    "propaganda": "선전", "construct": "개념", "epistemological": "인식론의", "morph": "~로 변화하다",
+    "commentator": "논평가", "opt for": "선택하다", "misconduct": "위법 행위", "on the part of": "~가 만든",
+    "chancellor": "총장", "stronghold": "근거지", "representative": "하원의원", "pundit": "전문가",
+    "hike": "인상", "implantation": "주입", "vector": "매개체", "halt": "중단시키다",
+    "profoundly": "대단히", "legislative": "입법적인"
+}
+
 # ==========================================
 # 3. 전체 단어 사전 연동 (기본 단어 + 상급 단어 모두 통합)
 # ==========================================
@@ -661,7 +677,8 @@ all_adv_voca = {
     **adv_voca_1, **adv_voca_2, **adv_voca_3, **adv_voca_4,
     **adv_voca_5, **adv_voca_6, **adv_voca_7, **adv_voca_8,
     **adv_voca_9, **adv_voca_10, **adv_voca_11, **adv_voca_12,
-    **adv_voca_13, **adv_voca_14, **adv_voca_15, **adv_voca_16
+    **adv_voca_13, **adv_voca_14, **adv_voca_15, **adv_voca_16,
+    **chap_4
 }
 all_voca = {**all_basic_voca, **all_adv_voca}
 
@@ -750,7 +767,7 @@ if st.session_state.quiz_state == 'selection':
         ("상급 7과", adv_voca_7), ("상급 8과", adv_voca_8), ("상급 9과", adv_voca_9),
         ("상급 10과", adv_voca_10), ("상급 11과", adv_voca_11), ("상급 12과", adv_voca_12),
         ("상급 13과", adv_voca_13), ("상급 14과", adv_voca_14), ("상급 15과", adv_voca_15),
-        ("상급 16과", adv_voca_16)
+        ("상급 16과", adv_voca_16), ("chap4", chap_4)
     ]
     
     for i in range(0, len(adv_chapters), 3):
