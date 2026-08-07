@@ -613,6 +613,38 @@ adv_voca_14 = {
     "on the loose": "탈주 중인", "restitution": "배상", "rancorous": "원한에 얽힌"
 }
 
+adv_voca_15 = {
+    "adversary": "적수", "boo": "야유하다", "clumsy": "서투른", "cramp": "경련, 진행을 방해하다",
+    "Don't sweat it.": "속 태우지 마.", "excursion": "소풍", "fondness": "애정", "affection": "애정",
+    "be fond of": "좋아하다", "have second thoughts": "재고하여 마음을 바꾸다", "invigorate": "기운나게 하다", "vigor": "활력",
+    "seek": "추구하다", "come up with": "생각해내다", "lame excuse": "서투른 변명", "lame": "설득력 없는",
+    "lame duck": "임기 말기의 정치인", "odds": "가능성", "lottery": "복권", "rule of thumb": "어림 계산",
+    "stake": "(돈, 생명을) 걸다, 내기", "strenuous": "격렬한", "take the cake": "(좋은, 나쁜 의미로) 압권이다", "yawn": "하품하다",
+    "a long shot": "승산 없는 것", "ardent": "열렬한", "exhilarated": "기분이 들뜬", "fervid": "열렬한",
+    "go for a stroll": "산책하다", "jubilant": "기쁨에 넘치는", "obtuse": "둔한", "deliberately": "의도적으로",
+    "sanguine": "낙천적인", "surmount": "극복하다", "obstacle": "장애물", "daring": "대담한",
+    "incessant": "끊임없는", "invincible": "천하무적의", "abstain from": "~을 삼가다", "bruise": "멍",
+    "daredevil": "무모한 사람", "fanatic": "광신도, 열광적인", "in a split second": "눈 깜짝할 사이에", "cave in": "굴복하다",
+    "hit one’s stride": "본래의 컨디션을 되찾다", "stay up": "깨어 있다"
+}
+
+adv_voca_16 = {
+    "by definition": "당연히, 정의에 의하면", "ritualize": "의식화하다", "sermon": "설교", "worldly": "세속적인",
+    "occult": "초자연적인", "profanity": "신성 모독", "atheist": "무신론자", "biblical": "성경의",
+    "date back": "시간을 거슬러가다", "saying": "격언", "distinct": "뚜렷한", "clarify": "명백히 하다",
+    "rebuff": "거절하다", "implore": "간청하다", "creed": "신념", "deity": "신",
+    "deify": "신격화하다", "disillusion": "환멸, 환상을 깨뜨리다", "divine": "신성한", "intervention": "중재",
+    "doctrine": "교리", "steadfastly": "변함없이", "impulse": "충동, 자극", "empirical": "경험적인",
+    "eternity": "영원", "guru": "지도자", "meditate": "명상하다, 꾀하다", "monk": "승려",
+    "monastery": "수도원", "pagan": "이교도의", "persecution": "박해", "prosecution": "기소",
+    "pope": "교황", "cardinal": "추기경", "resurrect": "부활하다", "robust": "튼튼한",
+    "salvation": "구원", "skeptical": "의심 많은", "clairvoyant": "천리안을 가진", "desecration": "신성 모독",
+    "omnipotent": "전지전능한", "pious": "독실한", "reincarnation": "환생", "tenet": "교리",
+    "exemplary": "모범적인", "integrity": "성실", "archetypal": "전형적인", "licentious": "부도덕한",
+    "by nature": "본래", "coexistent": "공존하는", "enshrine": "신전에 모시다", "prophesy": "예언하다",
+    "transcend": "초월하다", "vacuous": "멍청한, 공허한"
+}
+
 # ==========================================
 # 3. 전체 단어 사전 연동 (기본 단어 + 상급 단어 모두 통합)
 # ==========================================
@@ -629,9 +661,8 @@ all_adv_voca = {
     **adv_voca_1, **adv_voca_2, **adv_voca_3, **adv_voca_4,
     **adv_voca_5, **adv_voca_6, **adv_voca_7, **adv_voca_8,
     **adv_voca_9, **adv_voca_10, **adv_voca_11, **adv_voca_12,
-    **adv_voca_13, **adv_voca_14
+    **adv_voca_13, **adv_voca_14, **adv_voca_15, **adv_voca_16
 }
-
 all_voca = {**all_basic_voca, **all_adv_voca}
 
 # ==========================================
@@ -718,7 +749,8 @@ if st.session_state.quiz_state == 'selection':
         ("상급 4과", adv_voca_4), ("상급 5과", adv_voca_5), ("상급 6과", adv_voca_6),
         ("상급 7과", adv_voca_7), ("상급 8과", adv_voca_8), ("상급 9과", adv_voca_9),
         ("상급 10과", adv_voca_10), ("상급 11과", adv_voca_11), ("상급 12과", adv_voca_12),
-        ("상급 13과", adv_voca_13), ("상급 14과", adv_voca_14)
+        ("상급 13과", adv_voca_13), ("상급 14과", adv_voca_14), ("상급 15과", adv_voca_15),
+        ("상급 16과", adv_voca_16)
     ]
     
     for i in range(0, len(adv_chapters), 3):
