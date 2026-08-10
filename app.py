@@ -645,6 +645,39 @@ adv_voca_16 = {
     "transcend": "초월하다", "vacuous": "멍청한, 공허한"
 }
 
+adv_voca_17 = {
+    "hypocritical": "위선적인", "periodical": "잡지", "obsess": "사로잡다", "caption": "자막, 제목",
+    "stand out": "눈에 띄다", "censor": "검열하다", "censorship": "검열", "deem": "간주하다",
+    "speech": "언론", "concise": "간결한", "lucid": "명료한", "verbose": "장황한",
+    "distort": "왜곡하다", "dub": "~라고 부르다", "dab": "소량 바르다", "dubious": "의심스러운",
+    "entice": "유혹하다", "explicit": "명백한", "explicate": "설명하다", "hilarious": "즐거운",
+    "suspenseful": "긴장감 넘치는", "humiliating": "굴욕적인", "reassuring": "안심시키는", "upstanding": "훌륭한, 정직한",
+    "hypocrisy": "위선", "blatant": "뻔뻔한", "malicious": "악성의", "mournful": "슬픔에 잠긴",
+    "mourn": "슬퍼하다", "outspoken": "솔직한", "blunt": "무딘", "insinuate": "암시하다",
+    "pinpoint": "정확히 지적하다", "censure": "비난하다, 비난", "extoll": "극찬하다", "deplore": "비판하다",
+    "decry": "비난하다", "divulge": "누설하다", "frivolous": "사소한, 천박한", "expenditure": "지출",
+    "lecture": "연설하다", "implausible": "믿기 어려운", "lampoon": "풍자하다", "satire": "풍자",
+    "malign": "악성의, 헐뜯다", "benign": "양성의, 유순한", "evident": "분명한", "poignant": "신랄한, 가슴에 사무치는",
+    "sarcasm": "풍자", "rave review": "호평", "giggle": "낄낄 웃다", "editorial": "편집의",
+    "pseudonym": "가명", "baseless": "근거 없는", "preeminent": "뛰어난"
+}
+
+adv_voca_18 = {
+    "thoroughly": "철저히, 완전히", "dazzle": "압도하다", "interweave": "짜넣다", "apprentice": "견습생",
+    "overwhelm": "압도하다", "bizarre": "별난", "callous": "냉담한", "flock": "모이다",
+    "copycat": "모방자", "criterion": "표준", "dab": "가볍게 두드림, 소량", "sanitize": "살균하다",
+    "dexterity": "솜씨", "eccentric": "별난", "enchanting": "매혹적인", "disenchanted": "싫어하는",
+    "engrave": "새기다", "incise": "새기다", "evoke": "불러일으키다", "append": "덧붙이다",
+    "hue": "색조", "menial": "천한", "off the cuff": "즉흥적으로", "prowess": "뛰어난 능력",
+    "impede": "방해하다", "by the way": "그런데", "with the naked eye": "육안으로", "standing ovation": "기립박수",
+    "agile": "민첩한", "radical": "급진적인, 근본적인", "gradual": "점진적인", "render": "만들다",
+    "thorough": "철저한", "substitutive": "대리의", "look up to": "존경하다", "ephemeral": "순식간의, 덧없는",
+    "extol": "극찬하다", "flamboyance": "화려함", "incongruity": "부조화", "jocular": "우스꽝스러운",
+    "poised": "균형 잡힌, 침착한", "notorious": "악명 높은", "unmatched": "타의 추종을 불허하는", "flair": "재능",
+    "moribund": "죽어가는", "provenance": "기원", "embody": "구체화하다", "profoundly": "대단히",
+    "inimitable": "흉내낼 수 없는", "sublime": "숭고한"
+}
+
 chap_4 = {
     "mount": "늘다", "severity": "엄격함", "minor offense": "경범죄", "petty theft": "좀도둑질",
     "inmate": "수감자", "glowing": "극찬하는", "appease": "달래다", "evenhanded": "공정한",
@@ -678,7 +711,7 @@ all_adv_voca = {
     **adv_voca_5, **adv_voca_6, **adv_voca_7, **adv_voca_8,
     **adv_voca_9, **adv_voca_10, **adv_voca_11, **adv_voca_12,
     **adv_voca_13, **adv_voca_14, **adv_voca_15, **adv_voca_16,
-    **chap_4
+    **adv_voca_17, **adv_voca_18, **chap_4
 }
 all_voca = {**all_basic_voca, **all_adv_voca}
 
@@ -767,7 +800,8 @@ if st.session_state.quiz_state == 'selection':
         ("상급 7과", adv_voca_7), ("상급 8과", adv_voca_8), ("상급 9과", adv_voca_9),
         ("상급 10과", adv_voca_10), ("상급 11과", adv_voca_11), ("상급 12과", adv_voca_12),
         ("상급 13과", adv_voca_13), ("상급 14과", adv_voca_14), ("상급 15과", adv_voca_15),
-        ("상급 16과", adv_voca_16), ("chap4", chap_4)
+        ("상급 16과", adv_voca_16), ("상급 17과", adv_voca_17), ("상급 18과", adv_voca_18),
+        ("chap4", chap_4)
     ]
     
     for i in range(0, len(adv_chapters), 3):
