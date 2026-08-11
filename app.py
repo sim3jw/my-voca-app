@@ -4,7 +4,7 @@ import random
 import pandas as pd
 
 # 모바일 화면에 맞게 화면 넓게 쓰기
-st.set_page_config(page_title="나만의 단어장", layout="centered")
+st.set_page_config(page_title="Vocabulary", layout="centered")
 
 # ==========================================
 # 1. 기본 단어 데이터 (1과 ~ 30과)
@@ -678,6 +678,37 @@ adv_voca_18 = {
     "inimitable": "흉내낼 수 없는", "sublime": "숭고한"
 }
 
+adv_voca_19 = {
+    "requisite": "필수품, 필수의", "solitude": "고독", "whine": "불평하다", "jaunt": "소풍",
+    "profligate": "방탕한", "ahead of time": "예정된 시간보다 빨리", "behind the schedule": "예정보다 늦은", "amenity": "생활 편의 시설",
+    "lodging": "숙박", "barring": "~이 없다면", "be keen to V": "~하고 싶어 하다", "keen": "좋아하는, 예리한",
+    "beckon": "(손짓으로) 부르다, 유혹하다", "wave at": "~에게 손을 흔들다", "breathtaking": "(너무 놀라워서) 숨이 턱 막히는, 아슬아슬한", "prompt": "촉구하다",
+    "painstaking": "근면한, 공들인", "bustle": "혼잡, 북적거리다", "credulous": "잘 속는", "gullible": "잘 속는",
+    "drowsy": "졸리는", "abstain": "삼가다", "weary": "지친", "gaiety": "명량함",
+    "haven": "피난처", "province": "지역", "exotic": "외래의", "pristine": "원시의",
+    "laid-back": "느긋한", "loiter": "어슬렁거리다", "trespass": "침입하다", "lousy": "형편없는",
+    "monotonous": "단조로운", "perch": "앉다, 높은 자리", "pinnacle": "절정, 꼭대기", "summit": "꼭대기",
+    "remnant": "나머지, 나머지의", "stump": "난처하게 하다", "vow": "맹세하다", "chip in": "각자의 돈을 모으다",
+    "coast": "해변", "take over": "인수하다", "flout": "경멸하다, 법을 어기다", "repercussion": "영향",
+    "humdrum": "지루한", "insidious": "음흉한, (병이) 잠행성인", "lackluster": "활기 없는", "enlighten": "계몽하다",
+    "paltry": "하찮은", "sought-after": "수요가 많은", "daydream": "공상, 공상에 잠기다", "expedition": "탐험",
+    "oddball": "괴짜의, 괴짜", "jumble": "뒤섞다", "brash": "자신만만한, 성급한", "serene": "잔잔한",
+    "traverse": "횡단하다", "pesky": "성가신"
+}
+
+adv_voca_20 = {
+    "preclude": "방해하다", "overhaul": "점검, 장비", "buttress": "뒷받침하다, 버팀목", "intricate": "난해한",
+    "around the clock": "24시간 내내", "brainchild": "독창적인 아이디어", "drawback": "결점", "defect": "결점",
+    "flaw": "결점", "duplicate": "복제하다", "flawed": "결함 있는", "gadget": "장치",
+    "wrist": "손목", "give rise to": "만들어내다", "pivot": "회전하다, 축", "streamline": "효율적으로 만들다",
+    "stunning": "놀라운", "tilt": "기울이다, 기울기", "up and running": "작동 중인", "lawn": "잔디",
+    "on the house": "무료의", "against all odds": "가능성 없는", "bilateral": "쌍방의", "commitment": "임무",
+    "cumbersome": "크고 무거운", "elongate": "연장하다", "entrench": "굳게 자리잡다", "glitch": "결함, 결함 있는",
+    "obsolete": "오래되어 쓰지 않는, 진부한", "contraption": "장치", "propulsion": "추진", "perforated": "구멍이 난",
+    "supreme": "최고의", "boundless": "무한한", "pivotal": "중추적인", "utilitarian": "실용적인",
+    "ancillary": "보조의", "contrive": "고안하다", "infiltrate": "침투하다"
+}
+
 chap_4 = {
     "mount": "늘다", "severity": "엄격함", "minor offense": "경범죄", "petty theft": "좀도둑질",
     "inmate": "수감자", "glowing": "극찬하는", "appease": "달래다", "evenhanded": "공정한",
@@ -711,7 +742,8 @@ all_adv_voca = {
     **adv_voca_5, **adv_voca_6, **adv_voca_7, **adv_voca_8,
     **adv_voca_9, **adv_voca_10, **adv_voca_11, **adv_voca_12,
     **adv_voca_13, **adv_voca_14, **adv_voca_15, **adv_voca_16,
-    **adv_voca_17, **adv_voca_18, **chap_4
+    **adv_voca_17, **adv_voca_18, **adv_voca_19, **adv_voca_20,
+    **chap_4
 }
 all_voca = {**all_basic_voca, **all_adv_voca}
 
@@ -782,7 +814,7 @@ def go_home():
 # ==========================================
 # 6. 화면(UI) 그리기
 # ==========================================
-st.title("📖 나만의 영단어 암기장")
+st.title("📖 Vocabulary Test")
 
 # --- [단원 선택 화면] ---
 if st.session_state.quiz_state == 'selection':
@@ -801,7 +833,7 @@ if st.session_state.quiz_state == 'selection':
         ("상급 10과", adv_voca_10), ("상급 11과", adv_voca_11), ("상급 12과", adv_voca_12),
         ("상급 13과", adv_voca_13), ("상급 14과", adv_voca_14), ("상급 15과", adv_voca_15),
         ("상급 16과", adv_voca_16), ("상급 17과", adv_voca_17), ("상급 18과", adv_voca_18),
-        ("chap4", chap_4)
+        ("상급 19과", adv_voca_19), ("상급 20과", adv_voca_20), ("chap4", chap_4)
     ]
     
     for i in range(0, len(adv_chapters), 3):
