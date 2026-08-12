@@ -725,6 +725,38 @@ chap_4 = {
     "profoundly": "대단히", "legislative": "입법적인"
 }
 
+adv_voca_21 = {
+    "allowance": "용돈, 허가", "dwelling": "거주", "forsake": "버리다", "lease": "임대, 임대하다",
+    "ornate": "화려하게 장식된", "refurbish": "개조하다", "adjoining": "인접한", "property": "속성",
+    "blackout": "정전", "bleach": "표백하다, 표백제", "disinfect": "소독하다", "clutter": "어지르다, 어질러진 물건",
+    "demolish": "파괴하다", "detergent": "세제", "dim": "흐릿한, 흐리게 하다", "dwell": "거주하다",
+    "state": "말하다", "faucet": "수도꼭지", "indispensable": "없어서는 안되는", "intrude": "침입하다, 방해하다",
+    "halt": "중단하다", "nag": "잔소리하다", "clog": "막다", "spacious": "넓은",
+    "stink": "악취를 풍기다", "offensive": "불쾌한", "tear down": "파괴하다", "adjacent": "인접한",
+    "district": "구역", "dexterous": "손재주가 좋은", "instigate": "부추기다", "relinquish": "포기하다",
+    "tenuous": "보잘 것 없는", "bug": "방해하다", "ventilation": "환기", "override": "무효화하다, ~보다 우위에 서다, 무효",
+    "properly": "제대로", "corridor": "복도", "dependent": "의존적인", "dingy": "우중충한",
+    "spotless": "티끌 하나 없는", "cache": "은닉하다", "dismantle": "분해하다", "look after": "보살피다",
+    "refrain": "삼가다", "tumultuous": "시끄러운"
+}
+
+adv_voca_22 = {
+    "apathy": "무관심", "delusion": "망상", "fiery": "불같은", "heartburn": "가슴앓이",
+    "fixation": "집착, 고정", "mortify": "굴욕을 느끼게 하다, (감정을) 억제하다", "amnesia": "건망증", "total": "못 쓰게 만들다",
+    "anguish": "고통", "apathetic": "무관심한", "euphoric": "큰 기쁨의", "furious": "화난",
+    "appall": "소름끼치다", "arrogant": "건방진", "balk": "망설이다", "bereft of": "~이 없는, 상실한",
+    "delude": "속이다", "distress": "괴롭히다, 고통", "fret": "초조하게 하다", "forgo": "그만두다",
+    "hallucinate": "환각을 일으키다", "impulsive": "충동적인", "infuriate": "화나게 하다", "loyalty": "충성심",
+    "insane": "미친", "unthinkable": "생각없는", "paranoid": "편집증의, 편집증환자", "sedative": "진정제",
+    "repress": "억제하다", "admonish": "훈계하다", "snap out of": "(~한 상태에서) 벗어나다", "trance": "실신",
+    "sullen": "시무룩한, 음산한", "abhor": "혐오하다", "preacher": "연설가", "appease": "달래다",
+    "placate": "달래다, 진정시키다", "audacious": "대담한", "baffle": "당황시키다, 좌절시키다", "excruciating": "극심한 고통을 주는",
+    "exuberant": "활기 넘치는", "dazzle": "기분좋게 하다", "malleable": "융통성이 있는", "give in": "굴복하다",
+    "tantrum": "짜증", "gratification": "만족", "perplex": "당황시키다", "nostalgia": "향수",
+    "intuition": "직관", "astounding": "놀라운", "bashful": "수줍은", "compassionate": "인정 많은",
+    "abominate": "혐오하다", "complacent": "현실에 안주하는", "hit the roof": "화를 내다", "ailment": "병"
+}
+
 # ==========================================
 # 3. 전체 단어 사전 연동 (기본 단어 + 상급 단어 모두 통합)
 # ==========================================
@@ -743,7 +775,7 @@ all_adv_voca = {
     **adv_voca_9, **adv_voca_10, **adv_voca_11, **adv_voca_12,
     **adv_voca_13, **adv_voca_14, **adv_voca_15, **adv_voca_16,
     **adv_voca_17, **adv_voca_18, **adv_voca_19, **adv_voca_20,
-    **chap_4
+    **adv_voca_21, **adv_voca_22, **chap_4
 }
 all_voca = {**all_basic_voca, **all_adv_voca}
 
@@ -833,7 +865,8 @@ if st.session_state.quiz_state == 'selection':
         ("상급 10과", adv_voca_10), ("상급 11과", adv_voca_11), ("상급 12과", adv_voca_12),
         ("상급 13과", adv_voca_13), ("상급 14과", adv_voca_14), ("상급 15과", adv_voca_15),
         ("상급 16과", adv_voca_16), ("상급 17과", adv_voca_17), ("상급 18과", adv_voca_18),
-        ("상급 19과", adv_voca_19), ("상급 20과", adv_voca_20), ("chap4", chap_4)
+        ("상급 19과", adv_voca_19), ("상급 20과", adv_voca_20), ("상급 21과", adv_voca_21),
+        ("상급 22과", adv_voca_22), ("chap4", chap_4)
     ]
     
     for i in range(0, len(adv_chapters), 3):
