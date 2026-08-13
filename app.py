@@ -757,6 +757,38 @@ adv_voca_22 = {
     "abominate": "혐오하다", "complacent": "현실에 안주하는", "hit the roof": "화를 내다", "ailment": "병"
 }
 
+adv_voca_23 = {
+    "arithmetic": "산수", "cultivate": "기르다", "scold": "꾸짖다", "syllabus": "강의 요강",
+    "aptitude": "적성", "competence": "능력", "competent": "능력 있는", "corporal punishment": "체벌",
+    "inflict": "가하다", "cram": "밀어넣다", "discerning": "분별있는", "deed": "행동",
+    "drop out of": "~을 중퇴하다", "gauge": "평가하다", "get the hang of": "~을 이해하다", "live up to one's expectations": "기대에 맞춰 살다",
+    "mischief": "장난", "pathetic": "불쌍한", "extent": "정도", "prodigy": "천재",
+    "recess": "휴식 시간", "testimony": "증명", "reckon": "계산하다, 간주하다", "tedious": "지루한",
+    "unparalleled": "타의 추종을 불허하는", "transcript": "성적표", "unruly": "다루기 힘든", "upbringing": "양육",
+    "adamant": "단호한", "admonish": "충고하다", "digress": "(이야기가) 벗어나다", "deviate": "빗나가다",
+    "peruse": "정독하다", "divert": "우회시키다", "exemplary": "모범적인", "probation": "집행 유예, 수습 기간",
+    "subtract": "빼다", "excel": "뛰어나다", "half-hearted": "성의 없는", "hammer home": "강조하다",
+    "proficient": "능숙한", "self-taught": "독학한", "hone": "연마하다", "stern": "근엄한",
+    "tenacious": "집요한"
+}
+
+adv_voca_24 = {
+    "algae": "해조류", "feed on": "~을 먹고 살다", "lush": "무성한", "multiply": "번식시키다, 증가시키다",
+    "odor": "악취", "offspring": "자식", "a host of": "다수의", "a handful of": "소량의",
+    "amphibian": "양서류", "anatomy": "해부학", "annihilation": "전멸", "burrow": "굴을 파다, 굴",
+    "vicious": "사악한", "camouflage": "위장하다, 위장", "coral reef": "산호초", "fend off": "막다",
+    "earnestly": "간절히", "germ": "세균", "graze": "풀을 뜯다, 방목하다", "herd": "무리를 짓다, 떼",
+    "hibernation": "동면", "infest": "들끓다", "lurk": "잠복하다", "metabolism": "신진대사",
+    "tablet": "알약", "microbe": "미생물", "mimic": "흉내내다", "dialect": "사투리",
+    "correspond": "왕래하다", "predisposition": "(병에 걸리기 쉬운) 경향", "reptile": "파충류", "roam": "돌아다니다",
+    "nomad": "유목민", "secretion": "분비, 분비물", "secrete": "분비하다", "venom": "독",
+    "terrestrial": "육지에 사는, 지구의", "territorial": "영토의, 텃세의", "territory": "영토", "organic": "유기농의",
+    "agile": "민첩한", "carnivore": "육식 동물", "carnivorous": "육식성의", "excrete": "배설하다",
+    "nocturnal": "야행성의", "weed": "잡초", "herbivore": "초식 동물", "teem with": "바글거리다",
+    "adhesive": "접착성의, 접착제", "degenerate": "퇴화하다, 퇴화된 동물", "mental capacity": "지능", "ramification": "파장",
+    "symbiosis": "공생", "vertebrate": "척추동물"
+}
+
 # ==========================================
 # 3. 전체 단어 사전 연동 (기본 단어 + 상급 단어 모두 통합)
 # ==========================================
@@ -775,7 +807,8 @@ all_adv_voca = {
     **adv_voca_9, **adv_voca_10, **adv_voca_11, **adv_voca_12,
     **adv_voca_13, **adv_voca_14, **adv_voca_15, **adv_voca_16,
     **adv_voca_17, **adv_voca_18, **adv_voca_19, **adv_voca_20,
-    **adv_voca_21, **adv_voca_22, **chap_4
+    **adv_voca_21, **adv_voca_22, **adv_voca_23, **adv_voca_24,
+    **chap_4
 }
 all_voca = {**all_basic_voca, **all_adv_voca}
 
@@ -866,7 +899,8 @@ if st.session_state.quiz_state == 'selection':
         ("상급 13과", adv_voca_13), ("상급 14과", adv_voca_14), ("상급 15과", adv_voca_15),
         ("상급 16과", adv_voca_16), ("상급 17과", adv_voca_17), ("상급 18과", adv_voca_18),
         ("상급 19과", adv_voca_19), ("상급 20과", adv_voca_20), ("상급 21과", adv_voca_21),
-        ("상급 22과", adv_voca_22), ("chap4", chap_4)
+        ("상급 22과", adv_voca_22), ("상급 23과", adv_voca_23), ("상급 24과", adv_voca_24),
+        ("chap4", chap_4)
     ]
     
     for i in range(0, len(adv_chapters), 3):
