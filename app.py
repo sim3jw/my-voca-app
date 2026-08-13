@@ -742,7 +742,7 @@ adv_voca_21 = {
 
 adv_voca_22 = {
     "apathy": "무관심", "delusion": "망상", "fiery": "불같은", "heartburn": "가슴앓이",
-    "fixation": "집착, 고정", "mortify": "굴욕을 느끼게 하다, (감정을) 억제하다", "amnesia": "건망증", "total": "못 쓰게 만들다",
+    "fixation": "집착, 고정", "mortify": "굴욕을 느끼게 하다, (감정을) 억제하다", "amnesia": "건망증", "totaled": "망가진",
     "anguish": "고통", "apathetic": "무관심한", "euphoric": "큰 기쁨의", "furious": "화난",
     "appall": "소름끼치다", "arrogant": "건방진", "balk": "망설이다", "bereft of": "~이 없는, 상실한",
     "delude": "속이다", "distress": "괴롭히다, 고통", "fret": "초조하게 하다", "forgo": "그만두다",
