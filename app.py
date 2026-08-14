@@ -789,6 +789,37 @@ adv_voca_24 = {
     "symbiosis": "공생", "vertebrate": "척추동물"
 }
 
+adv_voca_25 = {
+    "in the long": "결국은, 장기적으로", "fulfill": "실행하다", "pending": "결정되지 않은, 임박한", "underway": "진행 중인",
+    "tariff": "관세", "annex": "(무력으로) 합병하다", "naval fleet": "해군 함대", "augment": "증가시키다",
+    "blemish": "결점, 손상되다", "bottom line": "순이익, 최종 결과, 핵심", "upscale": "가치를 높이다", "entrust": "맡기다",
+    "expertise": "전문 지식", "fetch": "갖고오다, (특정 가격에) 팔리다", "harness": "이용하다", "haughty": "건방진",
+    "hub": "중심지", "serve as": "~의 역할을 하다", "incorporate": "통합하다", "lucrative": "수익성이 좋은",
+    "offset": "상쇄하다", "procure": "얻다", "quote": "인용하다, 견적", "scheme": "계획, 제도",
+    "surpass": "능가하다", "twofold": "두 배의, 이중적인", "affiliated with": "~와 제휴한", "consign": "위탁하다",
+    "cutback": "축소", "understaff": "직원이 모자란", "pour down the drain": "돈을 쏟아붓다", "go down the drain": "수포로 돌아가다",
+    "vie": "경쟁하다", "vying": "경쟁하는", "laborious": "힘든", "tacit": "암묵적인",
+    "menial": "하찮은", "diffident": "소심한", "follow suit": "~을 따라하다", "industrious": "근면한",
+    "privatize": "민영화하다", "apportion": "배분하다", "conglomerate": "복합 기업, 합병하다", "expedite": "신속히 처리하다",
+    "increment": "증가, 이익", "spur": "박차, 박차를 가하다", "stringent": "엄격한"
+}
+
+adv_voca_26 = {
+    "contradict": "반박하다, 모순되다", "erroneous": "잘못된", "impure": "불순물이 섞인", "overshadow": "가리다",
+    "vaporize": "증발하다, 증발시키다", "coagulate": "응고시키다", "abound in": "~이 풍부하다", "flora": "식물군",
+    "fauna": "동물군", "elixir": "묘약", "ascend": "오르다", "catalyst": "촉매",
+    "configuration": "구성", "constraint": "제한", "constrain": "제한하다", "elastic": "탄성 있는",
+    "receptive": "수용적인", "flimsy": "조잡한", "fraction": "소량", "immerse": "담그다, 몰두하게 하다",
+    "extract": "뽑다", "degrade": "비하하다", "inertia": "관성", "kindle": "불붙이다",
+    "parallel": "유사한", "equator": "적도", "elevated": "높은, 고상한", "perpendicular": "수직의",
+    "residue": "나머지", "remnant": "나머지", "stumble upon": "우연히 마주치다", "substantiate": "입증하다",
+    "synthetic": "합성한", "vanish": "사라지다", "amorphous": "형태가 없는", "expound": "설명하다",
+    "juxtaposition": "병렬", "pliable": "유연한", "purse": "지갑", "aspiring": "야망 있는",
+    "inquisitive": "호기심 많은", "transparent": "투명한", "infinitesimal": "극미한", "permeable": "투과성의",
+    "constituent": "구성 요소", "give off": "발산하다", "probable": "있을법한", "indivisible": "나눌 수 있는",
+    "ebullient": "열광적인", "permeate": "스며들다"
+}
+
 # ==========================================
 # 3. 전체 단어 사전 연동 (기본 단어 + 상급 단어 모두 통합)
 # ==========================================
@@ -808,7 +839,7 @@ all_adv_voca = {
     **adv_voca_13, **adv_voca_14, **adv_voca_15, **adv_voca_16,
     **adv_voca_17, **adv_voca_18, **adv_voca_19, **adv_voca_20,
     **adv_voca_21, **adv_voca_22, **adv_voca_23, **adv_voca_24,
-    **chap_4
+    **adv_voca_25, **adv_voca_26, **chap_4
 }
 all_voca = {**all_basic_voca, **all_adv_voca}
 
@@ -900,7 +931,7 @@ if st.session_state.quiz_state == 'selection':
         ("상급 16과", adv_voca_16), ("상급 17과", adv_voca_17), ("상급 18과", adv_voca_18),
         ("상급 19과", adv_voca_19), ("상급 20과", adv_voca_20), ("상급 21과", adv_voca_21),
         ("상급 22과", adv_voca_22), ("상급 23과", adv_voca_23), ("상급 24과", adv_voca_24),
-        ("chap4", chap_4)
+        ("상급 25과", adv_voca_25), ("상급 26과", adv_voca_26), ("chap4", chap_4)
     ]
     
     for i in range(0, len(adv_chapters), 3):
