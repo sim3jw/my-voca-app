@@ -820,6 +820,37 @@ adv_voca_26 = {
     "ebullient": "열광적인", "permeate": "스며들다"
 }
 
+adv_voca_27 = {
+    "break the news": "소식을 전하다", "correspondence": "통신 왕래", "furtively": "은밀하게", "fuss": "소동",
+    "hindrance": "방해", "prevail": "유행하다, 우세하다", "provocative": "도발적인", "readily": "기꺼이",
+    "assurance": "확신, 보장", "beat around the bush": "둘러 이야기하다", "blunt": "덤덤한, 둔하게 하다", "correspond with": "일치하다, 왕래하다",
+    "forthcoming": "곧 닥쳐올, 마련된", "forward": "진보적인, 전달하다", "hinder": "방해하다", "decry": "헐뜯다",
+    "mundane": "평범한, 이승의", "obstruct": "막다", "prevalent": "만연하는", "convince": "확신시키다",
+    "revolt": "반란", "prompt": "신속한, 촉구하다", "protracted": "질질 끄는", "inclement": "험악한",
+    "proximity": "근접", "have no clue": "모르다", "recount": "자세히 이야기하다", "spill the beans": "비밀을 털어놓다",
+    "tip the scales": "결정적인 영향을 미치다", "affix": "첨부하다", "cajole": "속여서 ~하게 만들다", "forgo": "보류하다, 그만두다",
+    "severance pay": "퇴직금", "laconic": "간결한", "liaise": "연락하다", "in my favor": "나에게 유리하게",
+    "refute": "반박하다", "retort": "반박하다", "reticent": "과묵한", "incline": "경향이 있다",
+    "relief": "안도", "without a hitch": "거침없이", "insipid": "무미건조한", "repudiate": "거부하다",
+    "hotline": "전화 상담 서비스", "downright": "직설적인", "drag one’s feet": "꾸물거리다", "external": "외부의",
+    "talkative": "수다스러운", "trustworthy": "신뢰할 수 있는", "cursory": "대충", "recourse": "의지",
+    "surreptitiously": "몰래", "administer": "관리하다"
+}
+
+adv_voca_28 = {
+    "contention": "논쟁", "longitude": "경도", "peninsula": "반도", "radiant": "빛나는",
+    "resonate": "공명하다", "irradiate": "계몽하다, 밝히다", "surmise": "추측하다, 추측", "ambivalent": "양면적인",
+    "ambiguous": "모호한", "cluster": "무리, 밀집하다", "concur": "동의하다, 동시에 발생하다", "conjecture": "추측하다, 추측",
+    "contend": "논쟁하다", "riddle": "구멍을 뚫다", "diameter": "지름", "circumference": "원주",
+    "equator": "적도", "explode": "폭발하다", "collide": "충돌하다", "gigantic": "거대한",
+    "lucid": "명쾌한, 맑은", "manned": "유인의", "entity": "개체", "meteorite": "운석",
+    "ponder": "숙고하다", "propagate": "선전하다", "circumvent": "일주하다, 우회하다, 교묘하게 피하다", "contiguous": "근접한",
+    "conundrum": "난제", "plausible": "그럴듯한", "summer solstice": "하지", "wane": "약화되다, 작아지다",
+    "elusive": "달성하기 힘든, 파악하기 어려운, 교묘히 피하는", "scant": "부족한", "cryptic": "불가해한", "epicenter": "진원지",
+    "aggregate": "모이다", "magnitude": "규모", "rover": "방랑자", "percussion": "충격",
+    "perimeter": "주위", "reverberant": "반향하는", "salinity": "염도"
+}
+
 # ==========================================
 # 3. 전체 단어 사전 연동 (기본 단어 + 상급 단어 모두 통합)
 # ==========================================
@@ -839,7 +870,8 @@ all_adv_voca = {
     **adv_voca_13, **adv_voca_14, **adv_voca_15, **adv_voca_16,
     **adv_voca_17, **adv_voca_18, **adv_voca_19, **adv_voca_20,
     **adv_voca_21, **adv_voca_22, **adv_voca_23, **adv_voca_24,
-    **adv_voca_25, **adv_voca_26, **chap_4
+    **adv_voca_25, **adv_voca_26, **adv_voca_27, **adv_voca_28,
+    **chap_4
 }
 all_voca = {**all_basic_voca, **all_adv_voca}
 
@@ -931,7 +963,8 @@ if st.session_state.quiz_state == 'selection':
         ("상급 16과", adv_voca_16), ("상급 17과", adv_voca_17), ("상급 18과", adv_voca_18),
         ("상급 19과", adv_voca_19), ("상급 20과", adv_voca_20), ("상급 21과", adv_voca_21),
         ("상급 22과", adv_voca_22), ("상급 23과", adv_voca_23), ("상급 24과", adv_voca_24),
-        ("상급 25과", adv_voca_25), ("상급 26과", adv_voca_26), ("chap4", chap_4)
+        ("상급 25과", adv_voca_25), ("상급 26과", adv_voca_26), ("상급 27과", adv_voca_27),
+        ("상급 28과", adv_voca_28), ("chap4", chap_4)
     ]
     
     for i in range(0, len(adv_chapters), 3):
